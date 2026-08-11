@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safety &amp; Certification | Bounce Buddies North West</title>
+<meta name="description" content="BIHA membership, PAT testing, PIPA testing, insurance, and what to expect on the day. Everything you need to know before booking a bouncy castle with Bounce Buddies North West.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#4FA3E3;
+    --sky-deep:#2E7FC4;
+    --navy:#1B2A4A;
+    --coral:#FF6F91;
+    --peach:#FF8B5E;
+    --yellow:#FFD452;
+    --green:#8DC63F;
+    --cream:#FFFCF5;
+    --ink:#1B2A4A;
+    --max:1180px;
+    --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Nunito', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    line-height:1.08;
+    color:var(--navy);
+  }
+  .mono{font-family:'Space Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  section{padding:76px 0;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition-duration:.01ms !important;}
+  }
+
+  /* ---------- idle inflatable breathing ---------- */
+  @keyframes breathe{
+    0%, 100%{ transform:translateY(0) scale(1) rotate(var(--tilt, 0deg)); }
+    50%{ transform:translateY(-6px) scale(1.012) rotate(var(--tilt, 0deg)); }
+  }
+  .breathe{ animation:breathe 4.5s ease-in-out infinite; }
+  .breathe.slow{ animation-duration:5.6s; animation-delay:.4s; }
+
+  /* ---------- squash & bounce buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700; font-size:16px;
+    padding:15px 28px;
+    border-radius:40px 44px 42px 46px;
+    border:3px solid var(--navy);
+    cursor:pointer;
+    transition:transform .18s var(--ease-bounce), background .15s ease, color .15s ease;
+    transform-origin:center bottom;
+  }
+  .btn:hover{ transform:scale(1.06, 0.94) translateY(-2px); }
+  .btn:active{ transform:scale(.92, 1.1) translateY(2px); transition-duration:.08s; }
+  .btn:focus-visible{ outline:3px solid var(--navy); outline-offset:3px; }
+  .btn-primary{ background:var(--coral); color:var(--cream); }
+  .btn-primary:hover{ background:var(--peach); }
+  .btn-outline{ background:transparent; color:var(--navy); border-color:var(--navy); }
+  .btn-outline:hover{ background:var(--navy); color:var(--cream); }
+  .btn-light{ background:var(--cream); color:var(--navy); border-color:var(--navy); }
+  .btn-light:hover{ background:var(--yellow); }
+
+  /* ---------- scroll-in pop ---------- */
+  .pop{
+    opacity:0; transform:translateY(28px) scale(.94);
+    transition:opacity .5s var(--ease-bounce), transform .5s var(--ease-bounce);
+  }
+  .pop.in{ opacity:1; transform:translateY(0) scale(1); }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,252,245,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:3px solid var(--navy);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 24px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .nav-logo{ height:56px; width:auto; }
+  .nav-links{display:flex; gap:26px; align-items:center;}
+  .nav-links a.link{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:600; font-size:16px; color:var(--navy);
+    padding:6px 2px;
+    border-bottom:3px solid transparent;
+    transition:border-color .15s ease;
+  }
+  .nav-links a.link:hover{ border-color:var(--coral); }
+  .nav-cta{ padding:10px 20px; font-size:14px; }
+  .burger{display:none; background:none; border:none; cursor:pointer; padding:8px;}
+  .burger span{display:block; width:26px; height:3px; background:var(--navy); margin:5px 0; border-radius:2px;}
+
+  /* ---------- wobble seam divider (signature element) ---------- */
+  .seam{ display:block; width:100%; height:34px; }
+  .seam path{ transition:fill .3s ease; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 100%);
+    position:relative;
+    padding:56px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    max-width:var(--max); margin:0 auto; padding:0 24px 60px;
+    display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center;
+  }
+  .hero-logo{
+    width:min(340px, 78%);
+    filter:drop-shadow(0 18px 30px rgba(27,42,74,.28));
+    margin-bottom:22px;
+  }
+  .hero p.lede{
+    font-size:19px; font-weight:600;
+    max-width:46ch;
+    color:#EAF4FF;
+    margin-bottom:30px;
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:26px;}
+  .trust-inline{
+    display:flex; flex-wrap:wrap; gap:10px 20px;
+    font-family:'Space Mono', monospace;
+    font-size:12.5px; font-weight:700;
+    color:#EAF4FF;
+  }
+  .trust-inline span{display:flex; align-items:center; gap:7px;}
+  .trust-inline span::before{ content:"✓"; color:var(--yellow); }
+
+  .hero-photo-wrap{ position:relative; }
+  .hero-photo{
+    position:relative;
+    border-radius:38px 30px 42px 26px;
+    overflow:hidden;
+    border:5px solid var(--navy);
+    box-shadow:0 26px 50px -18px rgba(0,0,0,.4);
+    --tilt:1.4deg;
+  }
+  .hero-photo img{ aspect-ratio:5/5.4; object-fit:cover; width:100%; }
+  .hero-tag{
+    position:absolute; bottom:-14px; left:24px;
+    background:var(--yellow);
+    color:var(--navy);
+    font-family:'Baloo 2', sans-serif;
+    font-size:14px; font-weight:700;
+    padding:9px 18px;
+    border:3px solid var(--navy);
+    border-radius:30px 34px 30px 36px;
+    box-shadow:0 8px 0 -3px rgba(27,42,74,.15);
+  }
+
+  /* ---------- section head ---------- */
+  .section-head{max-width:640px; margin:0 auto 44px; text-align:center;}
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:12.5px; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase;
+    color:var(--sky-deep);
+    display:inline-flex; align-items:center; gap:8px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{ content:"●"; color:var(--coral); font-size:9px; }
+  .section-head h2{ font-size:clamp(28px,4vw,38px); margin-bottom:10px; }
+  .section-head p{ font-size:16.5px; color:#4B5568; }
+
+  /* ---------- services ---------- */
+  .services{background:var(--cream);}
+  .service-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:22px;
+  }
+  .service-card{
+    background:#fff;
+    border:3px solid var(--navy);
+    border-radius:30px 24px 32px 22px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition:transform .22s var(--ease-bounce), box-shadow .22s ease, border-radius .22s ease;
+  }
+  .service-card:nth-child(2n){ border-radius:24px 32px 22px 30px; }
+  .service-card:hover{
+    transform:translateY(-8px) rotate(-1deg);
+    box-shadow:0 20px 34px -16px rgba(27,42,74,.35);
+  }
+  .service-photo{ aspect-ratio:4/3; overflow:hidden; }
+  .service-photo img{ width:100%; height:100%; object-fit:cover; transition:transform .3s ease; }
+  .service-card:hover .service-photo img{ transform:scale(1.06); }
+  .service-body{ padding:20px 20px 24px; flex:1; display:flex; flex-direction:column; }
+  .service-badge{
+    font-family:'Space Mono', monospace;
+    font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--coral); margin-bottom:8px;
+  }
+  .service-card h3{ font-size:21px; margin-bottom:8px; }
+  .service-card p{ color:#4B5568; font-size:14.5px; flex:1; }
+  .service-card .btn{ margin-top:16px; align-self:flex-start; padding:9px 18px; font-size:13.5px; }
+  .service-card .btn-primary{ background:var(--navy); color:var(--cream); border-color:var(--navy); }
+  .service-card .btn-primary:hover{ background:var(--coral); }
+
+  /* ---------- touch feedback (mirrors :hover for phones/tablets) ---------- */
+  @media (hover: none){
+    .service-card:active{
+      transform:translateY(-4px) rotate(-1deg);
+      box-shadow:0 20px 34px -16px rgba(27,42,74,.35);
+    }
+    .service-card:active .service-photo img{ transform:scale(1.06); }
+    .gallery-item:active{ transform:translateY(-3px) rotate(-.6deg); }
+    .badge:active{ transform:translateY(-2px) rotate(1deg); border-color:var(--yellow); }
+    .quote-card:active{ transform:translateY(-3px) rotate(.6deg); }
+  }
+
+  /* ---------- trust strip ---------- */
+  .trust{ background:var(--navy); color:var(--cream); }
+  .trust-wrap{ display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center; }
+  .trust .eyebrow{ color:var(--yellow); }
+  .trust .eyebrow::before{ color:var(--coral); }
+  .trust h2{ color:var(--cream); font-size:clamp(26px,3.6vw,34px); margin-bottom:14px; }
+  .trust p{ color:#C9D6EC; font-size:16px; max-width:44ch; }
+  .badge-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; }
+  .badge{
+    border:2px dashed #4A5C82;
+    border-radius:20px 16px 22px 18px;
+    padding:18px 14px; text-align:center;
+    background:rgba(255,255,255,.04);
+    transition:transform .2s var(--ease-bounce), border-color .2s ease;
+  }
+  .badge:hover{ transform:translateY(-4px) rotate(1deg); border-color:var(--yellow); }
+  .badge .num{ font-family:'Space Mono', monospace; font-size:10.5px; color:var(--yellow); letter-spacing:.07em; display:block; margin-bottom:8px; }
+  .badge strong{ display:block; font-size:15px; margin-bottom:4px; font-family:'Baloo 2'; font-weight:700; }
+  .badge span.small{ font-size:12px; color:#9FB0CC; }
+
+  /* ---------- gallery ---------- */
+  .gallery{ background:var(--cream); }
+  .gallery-grid{
+    display:grid; grid-template-columns:1.3fr 1fr 1fr; grid-template-rows:auto auto; gap:18px;
+  }
+  .gallery-grid .g1{ grid-row:1 / span 2; }
+  .gallery-item{
+    border-radius:28px 22px 30px 20px;
+    overflow:hidden; border:3px solid var(--navy);
+    position:relative;
+    transition:transform .2s var(--ease-bounce);
+  }
+  .gallery-item:hover{ transform:translateY(-6px) rotate(-.6deg); }
+  .gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .g1 img{ aspect-ratio:3/4; }
+  .gallery-item.g2 img, .gallery-item.g3 img{ aspect-ratio:4/3; }
+  .gallery-item.g4{
+    grid-column:2 / span 2;
+    background:var(--coral);
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:28px;
+    border-radius:22px 30px 20px 28px;
+  }
+  .gallery-item.g4 h3{ color:var(--cream); font-size:21px; margin-bottom:9px; }
+  .gallery-item.g4 p{ color:#FFE4EC; font-size:14px; margin-bottom:15px; }
+
+  /* ---------- how it works ---------- */
+  .voice{ background:#FFF3E0; }
+  .voice-wrap{ display:grid; grid-template-columns:repeat(2, 1fr); gap:22px; }
+  .quote-card{
+    background:#fff; border:3px solid var(--navy);
+    border-radius:26px 20px 28px 22px;
+    padding:24px;
+    transition:transform .2s var(--ease-bounce);
+  }
+  .quote-card:hover{ transform:translateY(-5px) rotate(.6deg); }
+  .quote-card h3{
+    font-size:16px; margin-bottom:9px; color:var(--coral);
+    font-family:'Space Mono', monospace; text-transform:uppercase; letter-spacing:.03em; font-weight:700;
+  }
+  .quote-card p{ color:#3A4152; font-size:14.5px; }
+
+  /* ---------- booking ---------- */
+  .book{ background:var(--yellow); text-align:center; }
+  .book-wrap{ max-width:680px; margin:0 auto; }
+  .book h2{ font-size:clamp(30px,4.6vw,44px); margin-bottom:14px; }
+  .book p{ color:#5A4A1A; font-size:17px; margin-bottom:30px; }
+  .book .cta-row{ justify-content:center; }
+  .book .btn-primary{ background:var(--navy); color:var(--cream); border-color:var(--navy); }
+  .book .btn-primary:hover{ background:var(--coral); }
+  .book .btn-outline{ border-color:var(--navy); color:var(--navy); }
+  .book .btn-outline:hover{ background:var(--navy); color:var(--cream); }
+  .contact-line{ margin-top:24px; font-family:'Space Mono', monospace; font-size:13.5px; color:#5A4A1A; }
+  .contact-line a{ font-weight:700; text-decoration:underline; }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--navy); color:#A9B8D6; padding:44px 0 26px; }
+  .foot-wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px; padding-bottom:22px; }
+  .foot-logo{ height:52px; width:auto; margin-bottom:10px; }
+  footer p{ font-size:13.5px; max-width:36ch; }
+  .foot-links{ display:flex; gap:32px; flex-wrap:wrap; }
+  .foot-links div h4{
+    font-family:'Space Mono', monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--yellow); margin-bottom:10px;
+  }
+  .foot-links div a{ display:block; font-size:13.5px; margin-bottom:8px; color:#C9D6EC; }
+  .foot-links div a:hover{ color:var(--yellow); }
+  .foot-bottom{
+    border-top:1px solid #33456B; padding-top:18px;
+    font-size:12px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-family:'Space Mono', monospace; color:#7688AC;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    .hero-grid{ grid-template-columns:1fr; gap:8px; padding-top:6px; text-align:center; }
+    .hero-logo{ margin:0 auto 20px; }
+    .hero p.lede{ margin-left:auto; margin-right:auto; }
+    .cta-row{ justify-content:center; }
+    .trust-inline{ justify-content:center; }
+    .hero-photo-wrap{ margin-top:32px; }
+    .service-grid{ grid-template-columns:1fr 1fr; }
+    .trust-wrap{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+    .gallery-grid .g1{ grid-row:auto; grid-column:1 / span 2; }
+    .gallery-item.g4{ grid-column:1 / span 2; }
+    .voice-wrap{ grid-template-columns:1fr; }
+    .nav-links{ display:none; }
+    .burger{ display:block; }
+  }
+  @media (max-width: 560px){
+    .wrap, .nav, .hero-grid{ padding-left:18px; padding-right:18px; }
+    section{ padding:56px 0; }
+    .service-grid{ grid-template-columns:1fr; }
+    .badge-grid{ grid-template-columns:1fr 1fr; }
+    .cta-row{ flex-direction:column; align-items:stretch; }
+    .btn{ justify-content:center; }
+    .foot-wrap{ flex-direction:column; }
+  }
+  /* ---------- clickable castle photos ---------- */
+  .castle-photo{ cursor:zoom-in; }
+
+  /* ---------- lightbox ---------- */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(17,17,17,.92);
+    display:none; align-items:center; justify-content:center;
+    z-index:200; padding:24px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox-inner{ position:relative; max-width:900px; width:100%; text-align:center; }
+  .lightbox-inner img{
+    width:100%; max-height:78vh; object-fit:contain;
+    border-radius:16px; border:4px solid #fff; background:#fff; display:block; margin:0 auto;
+  }
+  .lightbox-caption{ color:var(--cream); margin-top:14px; font-size:15px; }
+  .lightbox-close, .lightbox-prev, .lightbox-next{
+    position:absolute; background:var(--cream); color:var(--navy);
+    border:3px solid var(--navy); border-radius:50%;
+    width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+    font-size:20px; cursor:pointer; line-height:1;
+  }
+  .lightbox-close{ top:-54px; right:0; }
+  .lightbox-prev{ top:50%; left:-14px; transform:translateY(-50%); }
+  .lightbox-next{ top:50%; right:-14px; transform:translateY(-50%); }
+  @media (max-width:640px){
+    .lightbox-close{ top:-46px; right:0; width:38px; height:38px; }
+    .lightbox-prev{ left:4px; }
+    .lightbox-next{ right:4px; }
+  }
+
+  /* ---------- book this style modal ---------- */
+  .book-modal{
+    position:fixed; inset:0; background:rgba(17,17,17,.75);
+    display:none; align-items:center; justify-content:center;
+    z-index:200; padding:20px;
+  }
+  .book-modal.open{ display:flex; }
+  .book-modal-card{
+    background:var(--cream); border:4px solid var(--navy);
+    border-radius:26px 30px 24px 28px; max-width:460px; width:100%;
+    max-height:90vh; overflow-y:auto; position:relative; padding:24px;
+  }
+  .book-modal-photo{
+    width:100%; aspect-ratio:4/3; border-radius:16px; overflow:hidden;
+    margin-bottom:16px; background:var(--coral);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .book-modal-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .book-modal-photo .no-photo{ color:var(--cream); font-weight:700; padding:20px; text-align:center; }
+  .book-modal h3{ font-size:23px; margin-bottom:8px; }
+  .book-modal-card p{ color:#4B5568; font-size:14.5px; margin-bottom:18px; }
+  .book-modal-close{
+    position:absolute; top:14px; right:14px; background:var(--cream); color:var(--navy);
+    border:3px solid var(--navy); border-radius:50%;
+    width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+    font-size:18px; cursor:pointer; line-height:1;
+  }
+  .book-modal-options{ display:flex; flex-direction:column; gap:10px; }
+  .book-modal-options .btn{ width:100%; justify-content:center; text-align:center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <a href="index.html#top"><img class="nav-logo" src="img01.png" alt="Bounce Buddies North West"></a>
+    <nav class="nav-links">
+      <a href="index.html" class="link">Castles</a>
+      <a href="safety.html" class="link">Safety</a>
+      <a href="index.html#gallery" class="link">Gallery</a>
+      <a href="https://wa.me/447307313222" class="btn btn-primary nav-cta">WhatsApp Us</a>
+    </nav>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="trust" id="safety-hero" style="padding-top:52px;">
+    <div class="wrap trust-wrap">
+      <div class="pop">
+        <p class="eyebrow">Safety &amp; certification</p>
+        <h2>Every castle, checked before it touches your garden.</h2>
+        <p>We're proud BIHA members and every inflatable we send out is PAT and PIPA tested, cleaned, and fully insured. Here's exactly what that means, and what to expect from setup to collection.</p>
+      </div>
+      <div class="badge-grid pop">
+        <div class="badge"><span class="num">CERT / 01</span><strong>BIHA Member</strong><span class="small">Industry accredited</span></div>
+        <div class="badge"><span class="num">CERT / 02</span><strong>PAT Tested</strong><span class="small">Every unit, every time</span></div>
+        <div class="badge"><span class="num">CERT / 03</span><strong>PIPA Tested</strong><span class="small">Inflatable safety mark</span></div>
+        <div class="badge"><span class="num">CERT / 04</span><strong>Fully Insured</strong><span class="small">Public liability cover</span></div>
+        <div class="badge"><span class="num">CERT / 05</span><strong>Cleaned Fresh</strong><span class="small">Before every hire</span></div>
+        <div class="badge"><span class="num">CERT / 06</span><strong>We Set Up</strong><span class="small">And pack away too</span></div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+    <path d="M0,32 Q50,12 100,32 Q150,52 200,32 Q250,12 300,32 Q350,52 400,32 Q450,12 500,32 Q550,52 600,32 Q650,12 700,32 Q750,52 800,32 Q850,12 900,32 Q950,52 1000,32 Q1050,12 1100,32 Q1150,52 1200,32 L1200,64 L0,64 Z" fill="var(--cream)"/>
+  </svg>
+
+  <section class="services" id="what-that-means">
+    <div class="wrap">
+      <div class="section-head pop">
+        <p class="eyebrow">What our certifications actually mean</p>
+        <h2>The checks, in plain English</h2>
+        <p>No jargon, just what we do and why it matters for your family's safety.</p>
+      </div>
+      <div class="service-grid">
+
+        <div class="service-card pop">
+          <div class="service-body">
+            <span class="service-badge">Association</span>
+            <h3>BIHA Membership</h3>
+            <p>We're members of the British Inflatable Hirers Alliance. Membership means our equipment, insurance, and operating standards are checked against the industry's official code of practice, not just our own word for it.</p>
+          </div>
+        </div>
+
+        <div class="service-card pop">
+          <div class="service-body">
+            <span class="service-badge">Electrical safety</span>
+            <h3>PAT Tested</h3>
+            <p>Portable Appliance Testing on every blower unit, every year. It confirms the electrics driving your castle are safe to plug in and run for the full length of your party.</p>
+          </div>
+        </div>
+
+        <div class="service-card pop">
+          <div class="service-body">
+            <span class="service-badge">Inflatable safety mark</span>
+            <h3>PIPA Tested</h3>
+            <p>Every castle carries a PIPA tag, an annual structural inspection by an independent examiner covering seams, anchor points, and fall height. If a unit doesn't pass, it doesn't leave the yard.</p>
+          </div>
+        </div>
+
+        <div class="service-card pop">
+          <div class="service-body">
+            <span class="service-badge">Cover</span>
+            <h3>Public Liability Insurance</h3>
+            <p>We carry &pound;5 million public liability insurance on every booking, so you and your guests are covered for the day. A copy of our certificate is available on request.</p>
+          </div>
+        </div>
+
+        <div class="service-card pop">
+          <div class="service-body">
+            <span class="service-badge">Hygiene</span>
+            <h3>Cleaned Before Every Hire</h3>
+            <p>Every castle is wiped down, disinfected, and inspected before it goes back out, not just when it looks dirty. What arrives at your garden has been cleaned specifically for your booking.</p>
+          </div>
+        </div>
+
+        <div class="service-card pop">
+          <div class="service-body">
+            <span class="service-badge">On the day</span>
+            <h3>Full Delivery Service</h3>
+            <p>We deliver, anchor down correctly for your ground type, run a safety check with you, and collect at the end. You never have to inflate, secure, or pack away anything yourself.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+    <path d="M0,32 Q50,52 100,32 Q150,12 200,32 Q250,52 300,32 Q350,12 400,32 Q450,52 500,32 Q550,12 600,32 Q650,52 700,32 Q750,12 800,32 Q850,52 900,32 Q950,12 1000,32 Q1050,52 1100,32 Q1150,12 1200,32 L1200,64 L0,64 Z" fill="var(--cream)"/>
+  </svg>
+
+  <section class="gallery" id="on-the-day">
+    <div class="wrap">
+      <div class="section-head pop">
+        <p class="eyebrow">Before you book</p>
+        <h2>What we need from you, and what happens on the day</h2>
+      </div>
+      <div class="voice-wrap" style="margin-top:26px;">
+        <div class="quote-card pop">
+          <h3>Space &amp; ground</h3>
+          <p>A flat, reasonably level area (grass, patio, or hard standing) with enough clearance around the castle's footprint. We'll ask for rough dimensions when you enquire so we can match the right size to your space.</p>
+        </div>
+        <div class="quote-card pop">
+          <h3>Power</h3>
+          <p>A standard household socket within reach of an extension lead does the job. If you don't have outdoor power, let us know and we'll talk through options.</p>
+        </div>
+        <div class="quote-card pop">
+          <h3>Adult supervision</h3>
+          <p>A responsible adult must supervise the castle at all times while it's in use, keeping numbers and age groups sensible and stepping in if things get too rough.</p>
+        </div>
+        <div class="quote-card pop">
+          <h3>Shoes off, no sharp items</h3>
+          <p>No shoes, glasses, jewellery, face paint, or food and drink on the castle. It keeps the material in good condition and stops anyone getting hurt on the bounce.</p>
+        </div>
+        <div class="quote-card pop">
+          <h3>Weather policy</h3>
+          <p>Inflatables can't safely be used in strong wind or heavy rain. If the forecast turns on the day, we'll be in touch to talk through rescheduling, no awkward conversations needed.</p>
+        </div>
+        <div class="quote-card pop">
+          <h3>Delivery &amp; collection</h3>
+          <p>We arrive ahead of your start time, set up, secure the castle, and run through the safety points with you. We collect at an agreed time once the fun's over.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book">
+    <div class="wrap book-wrap pop">
+      <h2>Any safety questions before you book?</h2>
+      <p>Send us a message and we'll talk you through anything, ground type, numbers, ages, or the weather on the day.</p>
+      <div class="cta-row">
+        <a href="https://wa.me/447307313222" class="btn btn-primary">Message us on WhatsApp</a>
+        <a href="index.html#castles" class="btn btn-light">Back to our castles</a>
+      </div>
+      <p class="contact-line">WhatsApp: <a href="https://wa.me/447307313222">07307 313222</a> &nbsp;&middot;&nbsp; Email: <a href="mailto:info@bouncebuddiesnw.com">info@bouncebuddiesnw.com</a></p>
+    </div>
+  </section>
+
+</main>
+
+<svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+  <path d="M0,32 Q50,12 100,32 Q150,52 200,32 Q250,12 300,32 Q350,52 400,32 Q450,12 500,32 Q550,52 600,32 Q650,12 700,32 Q750,52 800,32 Q850,12 900,32 Q950,52 1000,32 Q1050,12 1100,32 Q1150,52 1200,32 L1200,64 L0,64 Z" fill="var(--navy)"/>
+</svg>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-wrap">
+      <div>
+        <img class="foot-logo" src="img01.png" alt="Bounce Buddies North West">
+        <p>Bouncy castle and inflatable hire across Greater Manchester and the North West. BIHA members, PAT &amp; PIPA tested.</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>Explore</h4>
+          <a href="index.html">Our castles</a>
+          <a href="safety.html">Safety &amp; certification</a>
+          <a href="index.html#gallery">Gallery</a>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <a href="https://wa.me/447307313222">WhatsApp: 07307 313222</a>
+          <a href="mailto:info@bouncebuddiesnw.com">info@bouncebuddiesnw.com</a>
+          <a href="https://www.facebook.com/profile.php?id=61578611218774">Facebook page</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Bounce Buddies North West</span>
+      <span>Site by Proper Sites</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox: click any castle photo to see it full size -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&larr;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&rarr;</button>
+    <img id="lightboxImg" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
+<!-- Book this style popup -->
+<div class="book-modal" id="bookModal">
+  <div class="book-modal-card">
+    <button class="book-modal-close" id="bookModalClose" aria-label="Close">&times;</button>
+    <div class="book-modal-photo" id="bookModalPhotoWrap"></div>
+    <h3 id="bookModalName"></h3>
+    <p id="bookModalDesc"></p>
+    <div class="book-modal-options">
+      <a class="btn btn-primary" id="bookModalFb" target="_blank" rel="noopener">Message us on Facebook</a>
+      <a class="btn btn-primary" id="bookModalWa" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      <a class="btn btn-outline" id="bookModalEmail">Email us instead</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ---------- lightbox gallery ---------- */
+  (function(){
+    const photos = Array.from(document.querySelectorAll('.castle-photo'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    let current = 0;
+
+    function show(index){
+      current = (index + photos.length) % photos.length;
+      const p = photos[current];
+      lightboxImg.src = p.src;
+      lightboxImg.alt = p.alt;
+      lightboxCaption.textContent = p.alt;
+    }
+    function open(index){
+      if (!photos.length) return;
+      show(index);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    photos.forEach((img, i) => img.addEventListener('click', () => open(i)));
+    document.getElementById('lightboxClose').addEventListener('click', close);
+    document.getElementById('lightboxPrev').addEventListener('click', () => show(current - 1));
+    document.getElementById('lightboxNext').addEventListener('click', () => show(current + 1));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
+
+  /* ---------- book this style popup ---------- */
+  (function(){
+    const modal = document.getElementById('bookModal');
+    const photoWrap = document.getElementById('bookModalPhotoWrap');
+    const nameEl = document.getElementById('bookModalName');
+    const descEl = document.getElementById('bookModalDesc');
+    const fbLink = document.getElementById('bookModalFb');
+    const waLink = document.getElementById('bookModalWa');
+    const emailLink = document.getElementById('bookModalEmail');
+
+    const FB_URL = 'https://m.me/61578611218774';
+    const WA_NUMBER = '447307313222';
+    const EMAIL = 'info@bouncebuddiesnw.com';
+
+    function openModal(btn){
+      const card = btn.closest('.service-card') || btn.closest('.gallery-item') || btn.closest('.trust-wrap');
+      const name = btn.getAttribute('data-name') || 'this castle';
+      const descNode = card ? card.querySelector('p') : null;
+      const imgNode = card ? card.querySelector('img') : null;
+      const desc = descNode ? descNode.textContent : '';
+
+      nameEl.textContent = name;
+      descEl.textContent = desc;
+
+      photoWrap.innerHTML = '';
+      if (imgNode) {
+        const img = document.createElement('img');
+        img.src = imgNode.src;
+        img.alt = name;
+        photoWrap.appendChild(img);
+      } else {
+        const span = document.createElement('span');
+        span.className = 'no-photo';
+        span.textContent = name;
+        photoWrap.appendChild(span);
+      }
+
+      const message = `Hi! I'd like to ask about booking the ${name}.`;
+      fbLink.href = FB_URL;
+      waLink.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+      emailLink.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Booking enquiry: ' + name)}&body=${encodeURIComponent(message)}`;
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.book-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(btn);
+      });
+    });
+    document.getElementById('bookModalClose').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+  })();
+</script>
+
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('in'), i * 60);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.pop').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.pop').forEach(el => el.classList.add('in'));
+  }
+
+  const burger = document.querySelector('.burger');
+  const links = document.querySelector('.nav-links');
+  if (burger) {
+    burger.addEventListener('click', () => {
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+      links.style.cssText += 'position:absolute; top:100%; left:0; right:0; background:var(--cream); flex-direction:column; padding:20px 24px; border-bottom:3px solid var(--navy); gap:16px;';
+    });
+  }
+</script>
+
+</body>
+</html>
